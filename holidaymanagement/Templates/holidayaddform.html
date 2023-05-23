@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<h
+tml lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+    <div>
+    <h1>LMS Public Holiday Add</h1>
+    <form action="{% url 'form_data_save' %}" method="post">
+    {% csrf_token %}
+    <label for="typeoffestival">*Type:</label><br>
+    <select id="typeoffestival" name="selected_option1" style="width: 400px;height: 30px;" required>
+        <option value="">Select Options</option>
+        <option value="religious">Religious</option>
+        <option value="non-religious">Non-religious</option>
+        
+    </select><br><br>
+    <label for="from">*From</label><br>
+    <input style="width: 395px;height: 25px;" type="date" id="from" name="from_date" required><br><br>
+    <label for="name">*Name</label><br>
+    <input style="width: 395px;height: 25px;" style="width: 400px;height: 30px;" type="text" id="name" name="name" required><br><br>
+    <label for="countrylist">Country</label><br>
+    <select required style="width: 400px;height: 30px;" style="width: 400px;height: 30px;" name="selected_option2" id="countrylist" required>
+        <option value="">Select Options</option>
+        <option value="Indonesia">Indonesia</option>
+        <option value="Singapore">Singapore</option>
+        <option value="Canada">Canada</option>
+        <option value="India">India</option>
+    </select><br><br>
+    <button type="button" class="canbutton">Cancel</button>
+    <button type="submit" class="button">Save</button>
+    <!-- <input id="color_input" style="color: white;background-color: aqua;" type="submit"  style="height: 25px;"  value="Save"> -->
+    <!-- <input style="height: 25px;" type="submit" value="Cancel"> -->
+   </form>
+   </div>
+    
+</body>
+</html>

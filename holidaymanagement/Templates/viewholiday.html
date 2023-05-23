@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></head>
+<body>
+    <div><h2>LMS LIST VIEW</h2></div>
+   
+    <table>
+       
+        <tr>
+            
+                <th style="height: 40px;">Type</th>
+                <th>From</th>
+                <th>Name</th>
+                <th>Country</th>
+                <th>Actioms</th>
+                <!-- <th>Update</th> -->
+             
+                
+                      
+
+        </tr>
+        {% for i in data %}
+        <tr style="background-color: gainsboro">
+                <td style="height: 56px;">{{i.type_holiday}}</td>
+                <td>{{i.created_at}}</td>
+                <td>{{i.name }}</td>
+                <td>{{i.country}}</td>
+                
+                <!-- <td><a href="/student/update/{{ i.id }}/">Edit</a></td> -->
+                <td><a href="/holidaymanagementproject/viewpageone/{{i.id}}/"><i id="zoom_icon" class="fa fa-search-plus" aria-hidden="true"></i></a>
+                <a href="/holidaymanagementproject/update/{{i.id}}/"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> 
+                <a href="/holidaymanagementproject/delete/{{i.id}}/"><i class="fa fa-trash" aria-hidden="true"></i></a></td> 
+                <!-- <td><a href="/student/viewpageone/{{i.id}}/">View</a></td> -->
+                <!-- <td><a href="/student/delete/{{ i.id }}/">Delete</a></td> -->
+            
+        </tr>
+        {% endfor %}
+    </table><br>
+   
+</body>
+</html>
+
+

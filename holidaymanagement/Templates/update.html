@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<h
+tml lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+    <div>
+    <h1>LMS Public Holiday Add</h1>
+    <form action="/holidaymanagementproject/updaterecord/{{data.id}}/" method="post">
+    {% csrf_token %}
+    <label for="typeoffestival">*Type:</label><br>
+    <select id="typeoffestival" name="selected_option1" style="width: 400px;height: 30px;" required>
+        <option value=""  {% if data.type_holiday == "" %}selected{% endif %}>Select Options</option>
+        <option value="religious"  {% if data.type_holiday == "religious" %}selected{% endif %}>Religious</option>
+        <option value="non-religious"  {% if data.country == "non-religious" %}selected{% endif %}>Non-religious</option>
+        
+    </select><br><br>
+    <label for="from">*From</label><br>
+    <input style="width: 395px;height: 25px;" type="date" id="from" value="{{data.created_at}}" name="from_date" required><br><br>
+    <label for="name">*Name</label><br>
+    <input style="width: 395px;height: 25px;" style="width: 400px;height: 30px;" value="{{data.name}}" type="text" id="name" name="name" required><br><br>
+    <label for="countrylist">Country</label><br>
+    <select  required style="width: 400px;height: 30px;" style="width: 400px;height: 30px;" name="selected_option2" id="countrylist" required>
+        <option value="" {% if data.country == '' %}selected{% endif %}>Select Options</option>
+        <option value="Indonesia" {% if data.country == "Indonesia" %}selected{% endif %}>Indonesia</option>
+        <option value="Singapore" {% if data.country == "Singapore" %}selected{% endif %}>Singapore</option>
+        <option value="Canada" {% if data.country == "Canada" %}selected{% endif %}>Canada</option>
+        <option value="India"{% if data.country == "India" %}selected{% endif %}>India</option>
+    </select><br><br>
+    <button type="button" class="canbutton">Cancel</button>
+    <button type="submit" class="button">Save</button>
+    <!-- <input id="color_input" style="color: white;background-color: aqua;" type="submit"  style="height: 25px;"  value="Save"> -->
+    <!-- <input style="height: 25px;" type="submit" value="Cancel"> -->
+   </form>
+   </div>
+    
+</body>
+</html>

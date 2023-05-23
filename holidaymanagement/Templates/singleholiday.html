@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+</head>
+<body>
+    <h1>Lms Data</h1>
+    <table>
+       
+        <tr>
+            <th style="height: 40px;">Type</th>
+            <th>From</th>
+            <th>Name</th>
+            <th>Country</th>
+        </tr>
+            
+
+
+        
+        <tr style="background-color: gainsboro">
+            <td style="height: 56px;">{{data.type_holiday}}</td>
+            <td>{{data.created_at}}</td>
+            <td>{{data.name }}</td>
+            <td>{{data.country}}</td>
+        </tr>
+    </table><br>
+                
+            
+        
+    <!-- <button><a style="text-decoration:none;color: black;" href="/student/download_single_data/{{data.id}}/">Download in csv</a></button> -->
+
+</body>
+</html>
